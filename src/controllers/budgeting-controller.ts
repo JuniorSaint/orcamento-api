@@ -17,7 +17,7 @@ class BudgetingController {
         }
     }
 
-    async getByCli(id) {
+    async getByCli('/:_id' (req, res)) {
         try {
             let result = await BudgetingService.getByCli({id: id});
             return result;
