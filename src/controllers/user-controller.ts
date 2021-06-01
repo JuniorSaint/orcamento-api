@@ -4,13 +4,9 @@ import * as HttpStatus from "http-status";
 import UserService from "../services/user-service";
 import Helper from "../infra/helper";
 
-
-
 class UserController {
-
     async post(req, res) {
         try {
-
             let u = await UserService.getByEmail({ email: req.body.email });
              if (!u) {
                 let vm = req.body;
@@ -32,23 +28,17 @@ class UserController {
             news.password = bcrypt.hashSync(req.body.password, config.bcryptSalts)
             await UserService.put(_id, news);
             Helper.sendResponse(res, HttpStatus.OK, `Atualizado com sucesso!`);
-
         } catch (error) {
             console.error(error);
         }
     }
 
-
-
     async get(req, res) {
-
         try {
             let response = await UserService.get();
             Helper.sendResponse(res, HttpStatus.OK, response)
-
         } catch (error) {
-            console.error(error);
-        }
+            console.error(error);        }
     }
 
     async getById(req, res) {
@@ -56,26 +46,20 @@ class UserController {
             const _id = req.params.id;
             let response = await UserService.getById(_id);
             Helper.sendResponse(res, HttpStatus.OK, response);
-
         } catch (error) {
             console.error(error);
         }
     }
-
-
-
 
     async delete(req, res) {
         try {
             const _id = req.params.id;
             await UserService.delete(_id);
             Helper.sendResponse(res, HttpStatus.OK, "Deletado com sucesso!");
-
         } catch (error) {
             console.error(error);
         }
     }
-
 }
 
 export default new UserController();

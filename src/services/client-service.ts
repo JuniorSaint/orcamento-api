@@ -6,6 +6,7 @@ class ClientService {
     let result = await ClientRepository.find({}).sort({name: 1});
     return result;
   }
+  
   async getByIdName() {
     let result = await ClientRepository.find({}, 'name').sort({name: 1});
     return result;

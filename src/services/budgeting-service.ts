@@ -1,3 +1,4 @@
+import budgetingRespository from "../repositories/budgeting-respository";
 import BudgetingRepository from "../repositories/budgeting-respository";
      
 class BudgetingService {
@@ -12,12 +13,10 @@ class BudgetingService {
     return result;
   }
 
-
-  async getByCli(id) {
-    let result = await BudgetingRepository.findOne({id: id});
-    return result;
+  async getByCli(_id) {
+    let result = await budgetingRespository.find({_idClient: _id});
   }
- 
+
   async post(news) {
     let result = await BudgetingRepository.create(news);
     return result;

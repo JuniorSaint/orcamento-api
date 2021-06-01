@@ -1,6 +1,5 @@
 import * as mongoose from "mongoose";
 
-
 class DataBase{
     private DB_URL = 'mongodb+srv://junior:t4az32UHr4bsVqH@ecommerce.jfuj2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 

@@ -1,7 +1,7 @@
 
 class Configs {
     bcryptSalts:10;
-    keyJWT = "mas que saco";
+    keyJWT = "jkljsdf#ll**kkm%km03";
     expiresJWT = 8000
 }
 

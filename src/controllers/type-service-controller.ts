@@ -1,20 +1,13 @@
-import config from '../infra/config'
 import * as HttpStatus from "http-status";
 import TypeServiceService from '../services/type-service-service'
 import Helper from "../infra/helper";
-import BudgetingController from './budgeting-controller';
-
-
-
 class TypeServiceController {
     
     async delete(req, res) {
         try {
-
             const _id = req.params.id;
             await TypeServiceService.delete(_id);
-            Helper.sendResponse(res, HttpStatus.OK, "Deletado com sucesso!");
-    
+            Helper.sendResponse(res, HttpStatus.OK, "Deletado com sucesso!");    
         } catch (error) {
             console.error(error);
         }
@@ -30,8 +23,6 @@ class TypeServiceController {
         }
     }
 
-
-
     async put(req, res) {
         try {
             const _id = req.params.id;
@@ -44,10 +35,7 @@ class TypeServiceController {
         }
     }
 
-
-
     async get(req, res) {
-
         try {
             let response = await TypeServiceService.get();
             Helper.sendResponse(res, HttpStatus.OK, response)
@@ -67,11 +55,6 @@ class TypeServiceController {
             console.error(error);
         }
     }
-
-
-
-
-
 }
 
 export default new TypeServiceController();

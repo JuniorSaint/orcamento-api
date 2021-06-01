@@ -1,18 +1,18 @@
-
-
 import * as mongoose from 'mongoose';
 
-const  PhoneSchema = new mongoose.Schema({ 
-    phoneType: String, 
-    phoneNumber: String, 
-    social: String })
+const PhoneSchema = new mongoose.Schema({
+    phoneType: String,
+    phoneNumber: String,
+    social: String
+})
 
-
-const ClientSchema = new mongoose.Schema({  
-
+const ClientSchema = new mongoose.Schema({
     name: String,
     cpf: Number,
-    email: String,
+    email: {
+        type: String,
+        lowercase: true
+    },
     phone: [PhoneSchema],
     address: {
         street: String,
@@ -23,11 +23,9 @@ const ClientSchema = new mongoose.Schema({
         zipCode: Number,
     },
     note: String,
-},
-
- 
-{ timestamps: true ,
-  versionKey: false
+}, {
+    timestamps: true,
+    versionKey: false
 },
 );
 

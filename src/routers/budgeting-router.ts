@@ -3,12 +3,10 @@ import budgetingController from "../controllers/budgeting-controller";
 
 const EntryRouter = express.Router();
 
-EntryRouter.route("/budgeting").get(budgetingController.get);
-EntryRouter.route("/budgeting/:id").get(budgetingController.getById);
-EntryRouter.route("/budgeting/create").post(budgetingController.post);
-EntryRouter.route("/budgeting/:id").put(budgetingController.put);
-EntryRouter.route("/budgeting/:id").delete(budgetingController.delete);
-
-
+EntryRouter.route("/").get(budgetingController.get);
+EntryRouter.route("/:id").get(budgetingController.getById);
+EntryRouter.route("/create").post(budgetingController.post);
+EntryRouter.route("/:id").put(budgetingController.put);
+EntryRouter.route("/:id").delete(budgetingController.delete);
 
 export default EntryRouter;

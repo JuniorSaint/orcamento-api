@@ -3,12 +3,10 @@ import TypeServiceController from "../controllers/type-service-controller";
 
 const EntryRouter = express.Router();
 
-EntryRouter.route("/typeservice").get(TypeServiceController.get);
-EntryRouter.route("/typeservice/:id").get(TypeServiceController.getById);
-EntryRouter.route("/typeservice/create").post(TypeServiceController.post);
-EntryRouter.route("/typeservice/:id").put(TypeServiceController.put);
-EntryRouter.route("/typeservice/:id").delete(TypeServiceController.delete);
-
-
+EntryRouter.route("/").get(TypeServiceController.get);
+EntryRouter.route("/:id").get(TypeServiceController.getById);
+EntryRouter.route("/create").post(TypeServiceController.post);
+EntryRouter.route("/:id").put(TypeServiceController.put);
+EntryRouter.route("/:id").delete(TypeServiceController.delete);
 
 export default EntryRouter;
