@@ -2,7 +2,7 @@ import * as mongoose from 'mongoose';
 
 const PhoneSchema = new mongoose.Schema({
     phoneType: String,
-    phoneNumber: String,
+    phoneNumber: Number,
     social: String
 })
 
